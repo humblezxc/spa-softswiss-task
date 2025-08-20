@@ -25,4 +25,7 @@
     }
   }
 
+  .card-item__arrow, .footer__move-top {
+    filter: brightness(0) invert(1);
+  }
 }
