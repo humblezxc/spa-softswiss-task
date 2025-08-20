@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+  background-color: var(--color-grey-light);
+  padding-bottom: 20px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__move-top {
+    &:before {
+      background-image: url('../assets/images/arrow-top-icon.svg');
+    }
+  }
+
+  &__copyright {
+    font-size: $font-size-body-sm;
+    line-height: 145%;
+    font-weight: 400;
+  }
+}
