@@ -3,6 +3,8 @@
   --color-text: #FFFFFF;
   --color-primary: #E30613;
   --color-grey-light: rgba(255,255,255, .1);
+  --color-grey: rgba(255,255,255, .2);
+  --color-grey-dark: #000;
 
 
   .header__logo {
@@ -15,4 +17,12 @@
       transform: translate(-50%, -50%) rotate(180deg);
     }
   }
+
+
+  .countries-slider__prev, .countries-slider__next {
+    &:before {
+      filter: brightness(0);
+    }
+  }
+
 }

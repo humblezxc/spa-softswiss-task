@@ -14,7 +14,7 @@ h1 {
   line-height: 100%;
   letter-spacing: 0;
 
-  @include respond-to(md) {
+  @include respond-to(sm) {
     font-size: $font-size-h1-desktop;
   }
 }
