@@ -1,11 +1,7 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
-}
 @use 'abstracts/variables';
 @use 'abstracts/mixins';
 @use 'abstracts/functions';
+@use 'abstracts/utilities';
 
 @use 'base/reset';
 @use 'base/base';
@@ -25,11 +21,6 @@ body {
 
 @use 'pages/home';
 
-.header {
-  background: #222;
-  color: #fff;
-  padding: 1rem;
-}
 @use 'themes/light';
 @use 'themes/dark';
 

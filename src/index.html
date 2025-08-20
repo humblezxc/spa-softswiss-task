@@ -8,7 +8,13 @@
 <body>
 <header class="header">
     <div class="container header__container">
-        <a class="header__logo" href="">LOGO</a>
+        <div id="burger-menu" class="burger-menu">
+            <span id="burger" class="burger-menu__icon">
+                <span></span>
+            </span>
+            <span class="burger-menu__text">Menu</span>
+        </div>
+        <a class="header__logo" href=""></a>
         <nav class="header__navigation">
             <ul class="header__navigation-list">
                 <li class="header__navigation-list-item">Menu item</li>
@@ -19,8 +25,9 @@
             </ul>
         </nav>
         <div class="header__actions">
-            <button id="theme-toggle" class="btn header__toggle-theme">theme change</button>
-            <a href="" class="btn btn--red">Contact us</a>
+            <button id="theme-toggle" class="btn btn--w-icon header__toggle-theme"></button>
+            <a href="#" class="btn btn--red desktop-only">Contact us</a>
+            <a href="#" class="btn btn--w-icon header__contact-button mobile-only"></a>
         </div>
     </div>
 </header>

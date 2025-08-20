@@ -2,4 +2,17 @@
   --color-bg: #1D1D1B;
   --color-text: #FFFFFF;
   --color-primary: #E30613;
+  --color-grey-light: rgba(255,255,255, .1);
+
+
+  .header__logo {
+    background-image: url('../assets/images/softswiss-logo-white.svg');
+  }
+
+  .header__toggle-theme {
+    &:before {
+      filter: brightness(0) invert(1);
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
 }

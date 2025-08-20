@@ -1,3 +1,5 @@
+@use '../abstracts/mixins' as *;
+
 .header {
   color: var(--color-text);
 
@@ -9,6 +11,7 @@
   transition: .2s ease;
 
   &__container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,12 +21,93 @@
     border-radius: 16px;
   }
 
+  &__logo {
+    background-image: url('../assets/images/softswiss-logo.svg');
+    width: 150px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    order: 0;
+  }
+
+  &__navigation {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 10px);
+    background-color:var(--color-bg);
+    border-radius: 16px;
+    padding: 20px 20px 10px 20px;
+    transform: translateY(-80px) rotateX(90deg);
+    transform-origin: top;
+    pointer-events: none;
+    transition: .3s ease-in-out;
+    max-height: calc(100dvh - 120px);
+    overflow: auto;
+    z-index: -1;
+
+    &.open {
+      transform: translateY(0) rotateX(0);
+      opacity: 1;
+      pointer-events: visible;
+    }
+
+
+    @include respond-to(lg) {
+      position: initial;
+      background-color: transparent;
+      padding: 0;
+      transform: translateY(0) rotateX(0);
+      opacity: 1;
+      z-index: initial;
+      transition: none;
+    }
+  }
+
   &__navigation-list {
     display: flex;
+    flex-direction: column;
     align-items: center;
+
+    @include respond-to(lg) {
+      flex-direction: row;
+    }
   }
 
   &__navigation-list-item {
     padding: 14px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    padding-right: 10px;
+
+    @include respond-to(sm) {
+      margin-left: unset;
+      padding-right: unset;
+    }
+  }
+
+  &__toggle-theme {
+    display: none;
+
+    &:before {
+      background-image: url('../assets/images/theme-switch-icon.svg');
+    }
+
+    @include respond-to(sm) {
+      display: block;
+    }
+  }
+
+  &__contact-button {
+    background-color: var(--color-primary) !important;
+
+    &:before {
+      background-image: url('../assets/images/mail-icon.svg');
+    }
   }
 }

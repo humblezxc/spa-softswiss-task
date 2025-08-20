@@ -23,4 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("theme", "light-theme");
         }
     });
+
+    const burgerMenu = document.getElementById("burger-menu");
+    const nav = document.querySelector(".header__navigation");
+    const burgerIcon = document.querySelector(".burger-menu__icon");
+
+    burgerMenu.addEventListener("click", () => {
+        nav.classList.toggle("open");
+        body.classList.toggle("fixed");
+        burgerIcon.classList.toggle("open");
+    });
 });

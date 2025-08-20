@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use 'variables' as var;
+@use 'mixins' as *;
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.mobile-only {
+  display: block !important;
+
+  @include respond-to(lg) {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  display: none !important;
+
+  @include respond-to(lg) {
+    display: block !important;
+  }
+}
