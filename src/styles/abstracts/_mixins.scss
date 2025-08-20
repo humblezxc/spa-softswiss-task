@@ -1,0 +1,14 @@
+@use 'variables' as var;
+@use 'sass:map';
+
+@mixin respond-to($breakpoint) {
+  $min-width: map.get(var.$breakpoints, $breakpoint);
+
+  @if $min-width != null {
+    @media (min-width: $min-width) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint `#{$breakpoint}` in $breakpoints map.";
+  }
+}

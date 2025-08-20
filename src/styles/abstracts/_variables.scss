@@ -1,0 +1,31 @@
+:root {
+  --color-bg: #FFFFFF;
+  --color-text: #1D1D1B;
+  --color-primary: #E30613;
+  --color-white: #FFFFFF;
+  --color-grey: rgba(29,29,27, .1);
+}
+
+$breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+);
+
+
+$FontFamilySofiaPro: "Sofia Pro", sans-serif;
+
+$font-size-body-xs: 0.75rem;   // 12px
+$font-size-body-sm: 0.875rem;  // 14px
+$font-size-body-md: 1rem;      // 16px
+$font-size-body-lg: 1.125rem;  // 18px
+$font-size-body-xl-desktop: 1.5rem; // 24px
+$font-size-body-xl-mobile: 1.25rem; // 20px
+
+$font-size-h1-desktop: 4rem; // 64px
+$font-size-h1-mobile: 2rem;  // 32px
+
+

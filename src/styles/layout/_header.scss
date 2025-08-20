@@ -1,0 +1,29 @@
+.header {
+  color: var(--color-text);
+
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 10px;
+  right: 0;
+  transition: .2s ease;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-bg);
+    padding: 20px;
+
+    border-radius: 16px;
+  }
+
+  &__navigation-list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__navigation-list-item {
+    padding: 14px;
+  }
+}

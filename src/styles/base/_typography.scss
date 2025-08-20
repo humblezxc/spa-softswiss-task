@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+  font-family: $FontFamilySofiaPro;
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: $font-size-h1-mobile;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-h1-desktop;
+  }
+}
+
