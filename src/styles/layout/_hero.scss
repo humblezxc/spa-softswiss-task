@@ -12,10 +12,17 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 202px 0 240px 0;
+    padding-top: 162px;
+    padding-bottom: 75px;
+
+    @include respond-to(sm) {
+      padding-top: 202px;
+      padding-bottom: 240px;
+    }
 
     @include respond-to(lg) {
-      padding: 100px 0;
+      padding-top: 100px;
+      padding-bottom: 100px;
     }
   }
 

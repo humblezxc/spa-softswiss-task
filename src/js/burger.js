@@ -4,11 +4,54 @@ export function initBurgerMenu() {
     const burgerIcon = document.querySelector(".burger-menu__icon");
     const body = document.body;
 
-    if (burgerMenu && nav && burgerIcon) {
-        burgerMenu.addEventListener("click", () => {
-            nav.classList.toggle("open");
-            body.classList.toggle("fixed");
-            burgerIcon.classList.toggle("open");
-        });
+    if (!burgerMenu || !nav || !burgerIcon) return;
+
+    const onDocClick = (e) => {
+        if (!nav.classList.contains("open")) return;
+
+        const target = e.target;
+        if (target.closest(".header__navigation") || target.closest("#burger-menu")) return;
+
+        closeMenu();
+    };
+
+    const onKeyDown = (e) => {
+        if (e.key === "Escape") {
+            closeMenu();
+        }
+    };
+
+    const onResize = () => {
+        if (nav.classList.contains("open")) closeMenu();
+    };
+
+    function openMenu() {
+        nav.classList.add("open");
+        body.classList.add("fixed");
+        burgerIcon.classList.add("open");
+
+        document.addEventListener("click", onDocClick);
+        document.addEventListener("keydown", onKeyDown);
+        window.addEventListener("resize", onResize);
     }
+
+    function closeMenu() {
+        nav.classList.remove("open");
+        body.classList.remove("fixed");
+        burgerIcon.classList.remove("open");
+
+        // Remove global listeners
+        document.removeEventListener("click", onDocClick);
+        document.removeEventListener("keydown", onKeyDown);
+        window.removeEventListener("resize", onResize);
+    }
+
+    burgerMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (nav.classList.contains("open")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
 }

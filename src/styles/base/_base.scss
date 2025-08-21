@@ -26,3 +26,13 @@ body {
     }
   }
 }
+
+a, button {
+  &:hover {
+    opacity: .7;
+  }
+}
+
+a {
+  color: var(--color-text);
+}

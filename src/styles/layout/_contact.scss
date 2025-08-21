@@ -1,6 +1,12 @@
+@use '../abstracts/mixins' as *;
+
 .contact-section {
   background-color: var(--color-bg);
-  padding-bottom: 104px;
+  padding-bottom: 74px;
+
+  @include respond-to(sm) {
+    padding-bottom: 104px;
+  }
 
   &__container {
     display: flex;
