@@ -7,6 +7,7 @@
   gap: 1rem;
 
   .card-item {
+    position: relative;
     background-color: var(--color-grey-light);
     border-radius: 20px;
     padding: 20px;
@@ -20,6 +21,15 @@
 
     @include respond-to(sm) {
       padding: 24px;
+    }
+
+    &__link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
     }
 
     &__tag {
@@ -76,6 +86,13 @@
       background-repeat: no-repeat;
       width: 20px;
       height: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      .card-item__arrow {
+        transform: translateX(10px);
+      }
     }
   }
 
