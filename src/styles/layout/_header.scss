@@ -137,5 +137,31 @@
     &:before {
       background-image: url('../assets/images/mail-icon.svg');
     }
+
+    span {
+      display: none;
+    }
+
+    @include respond-to(lg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: initial !important;
+      height: 48px !important;
+      padding: 24px !important;
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      text-transform: uppercase;
+
+      &:before {
+        content: none;
+        display: none;
+        background-image: none;
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
   }
 }
