@@ -1,6 +1,5 @@
 @use 'abstracts/variables';
 @use 'abstracts/mixins';
-@use 'abstracts/functions';
 @use 'abstracts/utilities';
 
 @use 'base/reset';
@@ -18,14 +17,12 @@
 @use 'layout/countries';
 
 @use 'components/buttons';
-@use 'components/card';
 @use 'components/slider';
 @use 'components/theme-switcher';
 @use 'components/menu';
 
 @use 'pages/home';
 
-@use 'themes/light';
 @use 'themes/dark';
 
 @use 'vendors/swiper';

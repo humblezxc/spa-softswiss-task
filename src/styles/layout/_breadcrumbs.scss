@@ -1,0 +1,66 @@
+@use '../abstracts/variables' as *;
+
+.breadcrumbs {
+  align-self: center;
+  background-color: var(--color-primary);
+  padding: 24px;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  color: var(--color-white);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -14px;
+    width: 14px;
+    height: 14px;
+    background-image: url('../assets/images/breadcrumbs-left-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -14px;
+    width: 14px;
+    height: 14px;
+    background-image: url('../assets/images/breadcrumbs-right-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__list {
+    display: flex;
+    gap: 14px;
+    //list-style-image: url('../assets/images/list-triangle-icon.svg');
+  }
+
+  &__list-item {
+    position: relative;
+    margin-left: 22px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -22px;
+      width: 8px;
+      height: 8px;
+      background-image: url('../assets/images/list-triangle-icon.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+
+    a {
+      font-size: $font-size-body-sm;
+      font-weight: 600;
+      line-height: 145%;
+      color: var(--color-white);
+    }
+  }
+}
