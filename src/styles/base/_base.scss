@@ -30,6 +30,7 @@ body {
 a, button {
   &:hover {
     opacity: .7;
+    transition: .3s ease;
   }
 }
 

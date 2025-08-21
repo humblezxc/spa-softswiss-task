@@ -22,10 +22,13 @@
                 <li class="header__navigation-list-item"><a href="#">Menu item</a></li>
                 <li class="header__navigation-list-item"><a href="#">Menu item</a></li>
                 <li class="header__navigation-list-item"><a href="#">Menu item</a></li>
+                <li class="header__navigation-list-item header__navigation-list-item--theme mobile-only-sm">
+                    <button id="theme-toggle-mobile" class="btn btn--w-icon header__toggle-theme"></button>
+                </li>
             </ul>
         </nav>
         <div class="header__actions">
-            <button id="theme-toggle" class="btn btn--w-icon header__toggle-theme"></button>
+            <button id="theme-toggle-desktop" class="btn btn--w-icon header__toggle-theme desktop-only-sm"></button>
             <a href="#" class="btn btn--red desktop-only">Contact us</a>
             <a href="#" class="btn btn--w-icon header__contact-button mobile-only"></a>
         </div>
@@ -136,7 +139,7 @@
             <div class="countries-slider-wrapper">
                 <div class="swiper countries-slider">
                     <div class="countries-slider__top">
-                        <i class="btn btn--w-icon btn--rounded countries-slider__prev mobile-only"></i>
+                        <button class="btn btn--w-icon btn--rounded countries-slider__prev mobile-only"></button>
                         <div class="countries-slider__pagination">
                             <span class="countries-slider__current">1</span>
                             <div class="countries-slider__progress">
@@ -145,8 +148,8 @@
                             <span class="countries-slider__total">0</span>
                         </div>
                         <div class="countries-slider__arrows">
-                            <i class="btn btn--w-icon btn--rounded countries-slider__prev desktop-only"></i>
-                            <i class="btn btn--w-icon btn--rounded countries-slider__next"></i>
+                            <button class="btn btn--w-icon btn--rounded countries-slider__prev desktop-only"></button>
+                            <button class="btn btn--w-icon btn--rounded countries-slider__next"></button>
                         </div>
                     </div>
                     <div class="swiper-wrapper countries-slider__items">

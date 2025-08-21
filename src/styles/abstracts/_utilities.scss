@@ -33,3 +33,19 @@
     display: block !important;
   }
 }
+
+.mobile-only-sm {
+  display: block !important;
+
+  @include respond-to(sm) {
+    display: none !important;
+  }
+}
+
+.desktop-only-sm {
+  display: none !important;
+
+  @include respond-to(sm) {
+    display: block !important;
+  }
+}

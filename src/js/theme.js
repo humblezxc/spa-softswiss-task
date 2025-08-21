@@ -1,7 +1,7 @@
 export function initThemeToggle() {
     const body = document.body;
     const savedTheme = localStorage.getItem("theme");
-    const toggleBtn = document.getElementById("theme-toggle");
+    const toggleBtns = document.querySelectorAll("#theme-toggle-mobile, #theme-toggle-desktop");
 
     if (savedTheme) {
         body.classList.add(savedTheme);
@@ -10,8 +10,8 @@ export function initThemeToggle() {
         body.classList.add(prefersDark ? "dark-theme" : "light-theme");
     }
 
-    if (toggleBtn) {
-        toggleBtn.addEventListener("click", () => {
+    toggleBtns.forEach(btn => {
+        btn?.addEventListener("click", () => {
             if (body.classList.contains("light-theme")) {
                 body.classList.replace("light-theme", "dark-theme");
                 localStorage.setItem("theme", "dark-theme");
@@ -20,5 +20,5 @@ export function initThemeToggle() {
                 localStorage.setItem("theme", "light-theme");
             }
         });
-    }
+    });
 }
