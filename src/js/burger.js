@@ -8,17 +8,13 @@ export function initBurgerMenu() {
 
     const onDocClick = (e) => {
         if (!nav.classList.contains("open")) return;
-
         const target = e.target;
         if (target.closest(".header__navigation") || target.closest("#burger-menu")) return;
-
         closeMenu();
     };
 
     const onKeyDown = (e) => {
-        if (e.key === "Escape") {
-            closeMenu();
-        }
+        if (e.key === "Escape") closeMenu();
     };
 
     const onResize = () => {
@@ -29,7 +25,7 @@ export function initBurgerMenu() {
         nav.classList.add("open");
         body.classList.add("fixed");
         burgerIcon.classList.add("open");
-
+        burgerMenu.setAttribute("aria-expanded", "true");
         document.addEventListener("click", onDocClick);
         document.addEventListener("keydown", onKeyDown);
         window.addEventListener("resize", onResize);
@@ -39,8 +35,7 @@ export function initBurgerMenu() {
         nav.classList.remove("open");
         body.classList.remove("fixed");
         burgerIcon.classList.remove("open");
-
-        // Remove global listeners
+        burgerMenu.setAttribute("aria-expanded", "false");
         document.removeEventListener("click", onDocClick);
         document.removeEventListener("keydown", onKeyDown);
         window.removeEventListener("resize", onResize);

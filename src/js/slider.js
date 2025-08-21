@@ -20,11 +20,19 @@ export function initSlider() {
         const current = swiper.realIndex + 1;
         currentEl.textContent = current;
         const pct = (current / totalSlides) * 100;
-
         requestAnimationFrame(() => {
             progressEl.style.width = `${pct}%`;
         });
     };
+
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const autoplay = reduceMotion
+        ? false
+        : {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        };
 
     new Swiper(sliderEl, {
         modules: [Navigation, Autoplay],
@@ -40,11 +48,7 @@ export function initSlider() {
             992: { slidesPerView: 3 },
             1400: { slidesPerView: 4 },
         },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-        },
+        autoplay,
         on: {
             init(sw) {
                 totalSlides = getRealSlidesCount(sw);
