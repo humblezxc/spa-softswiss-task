@@ -20,7 +20,10 @@ export function initSlider() {
         const current = swiper.realIndex + 1;
         currentEl.textContent = current;
         const pct = (current / totalSlides) * 100;
-        progressEl.style.width = `${pct}%`;
+
+        requestAnimationFrame(() => {
+            progressEl.style.width = `${pct}%`;
+        });
     };
 
     new Swiper(sliderEl, {
@@ -48,12 +51,7 @@ export function initSlider() {
                 totalEl.textContent = totalSlides;
                 updateUI(sw);
             },
-            slideChange(sw) {
-                updateUI(sw);
-            },
-            loopFix(sw) {
-                updateUI(sw);
-            },
+            slideChange: updateUI,
         },
     });
 }
