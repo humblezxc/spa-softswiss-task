@@ -1,0 +1,119 @@
+@use '../abstracts/mixins' as *;
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 202px 0 240px 0;
+
+    @include respond-to(lg) {
+      padding: 100px 0;
+    }
+  }
+
+  &__title,
+  &__description {
+    position: relative;
+    z-index: 3;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 700;
+
+    @include respond-to(lg) {
+      padding-top: 104px;
+    }
+  }
+
+  &__description {
+    padding-top: 20px;
+    text-align: center;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 150%;
+    opacity: 0.8;
+  }
+
+  .bg-left,
+  .bg-right {
+    display: none;
+  }
+
+  @include respond-to(sm) {
+    .bg-left,
+    .bg-right {
+      display: block;
+      position: absolute;
+      bottom: -60px;
+      height: auto;
+      pointer-events: none;
+      z-index: 1;
+      will-change: transform;
+      transition: transform 160ms linear;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      opacity: 0.98;
+    }
+
+    .bg-left,
+    .bg-right {
+      width: clamp(260px, 18vw, 320px);
+      height: clamp(360px, 18vw, 340px);
+      max-width: 360px;
+    }
+
+    .bg-left {
+      left: -60px;
+      transform-origin: left bottom;
+      background-position: left 0 bottom;
+      margin-left: -6%;
+    }
+
+    .bg-right {
+      right: -60px;
+      transform-origin: right bottom;
+      background-position: right bottom;
+      margin-right: -6%;
+    }
+
+    @include respond-to(md) {
+      .bg-left {
+        margin-left: -8%;
+      }
+      .bg-right {
+        margin-right: -8%;
+      }
+    }
+
+    @include respond-to(lg) {
+      .bg-left {
+        margin-left: -10%;
+        left: 15px;
+      }
+      .bg-right {
+        margin-right: -10%;
+        right: 15px;
+      }
+
+    }
+
+    @include respond-to(xl) {
+      .bg-left {
+        left: 100px;
+      }
+
+      .bg-right {
+        right: 100px;
+      }
+    }
+  }
+}
